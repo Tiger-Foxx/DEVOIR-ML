@@ -7,7 +7,6 @@
 # cd "C:\Users\donfa\OneDrive\Desktop\DEVOIR ML"
 ```
 
-
 ```python
 import pandas as pd
 import numpy as np
@@ -144,7 +143,123 @@ print(f"Le dataset contient {df.shape[0]} lignes et {df.shape[1]} colonnes.")
     Le dataset contient 4009 lignes et 12 colonnes.
     
 
+### Informations sur le dataset
+
+
+```python
+df.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 4009 entries, 0 to 4008
+    Data columns (total 12 columns):
+     #   Column        Non-Null Count  Dtype 
+    ---  ------        --------------  ----- 
+     0   brand         4009 non-null   object
+     1   model         4009 non-null   object
+     2   model_year    4009 non-null   int64 
+     3   milage        4009 non-null   object
+     4   fuel_type     3839 non-null   object
+     5   engine        4009 non-null   object
+     6   transmission  4009 non-null   object
+     7   ext_col       4009 non-null   object
+     8   int_col       4009 non-null   object
+     9   accident      3896 non-null   object
+     10  clean_title   3413 non-null   object
+     11  price         4009 non-null   object
+    dtypes: int64(1), object(11)
+    memory usage: 376.0+ KB
+    
+
+### graphique de distribution des colones du dataset , dans le but de ressortir certaines tendances
+
+
+```python
+# This code shows distribution plot for all other columns
+for column in df:
+    sns.displot(x=column, data=df)
+```
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_0.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_1.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_2.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_3.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_4.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_5.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_6.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_7.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_8.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_9.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_10.png)
+    
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_8_11.png)
+    
+
+
+
+```python
+# sns.pairplot(df,hue='model_year')
+```
+
 ## Nettoyage des données
+
+### On remarque que dans ce dataset le prix n'est pas sous la bonne forme
 
 
 ```python
@@ -178,6 +293,72 @@ missing_values
     dtype: int64
 
 
+
+### On constate que la colone milage n'est pas bonne non plus
+
+
+```python
+# Transformation de la colonne mileage
+df['milage'] = df['milage'].str.replace(',', '').str.replace(' mi.', '').astype(float)
+
+df['milage'].head()
+```
+
+
+
+
+    0    51000.0
+    1    34742.0
+    2    22372.0
+    3    88900.0
+    4     9835.0
+    Name: milage, dtype: float64
+
+
+
+
+```python
+sns.pairplot(df,hue='model_year')
+```
+
+
+
+
+    <seaborn.axisgrid.PairGrid at 0x28f8244e450>
+
+
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_14_1.png)
+    
+
+
+
+```python
+df.info()
+```
+
+    <class 'pandas.core.frame.DataFrame'>
+    RangeIndex: 4009 entries, 0 to 4008
+    Data columns (total 12 columns):
+     #   Column        Non-Null Count  Dtype  
+    ---  ------        --------------  -----  
+     0   brand         4009 non-null   object 
+     1   model         4009 non-null   object 
+     2   model_year    4009 non-null   int64  
+     3   milage        4009 non-null   float64
+     4   fuel_type     3839 non-null   object 
+     5   engine        4009 non-null   object 
+     6   transmission  4009 non-null   object 
+     7   ext_col       4009 non-null   object 
+     8   int_col       4009 non-null   object 
+     9   accident      3896 non-null   object 
+     10  clean_title   3413 non-null   object 
+     11  price         4009 non-null   float64
+    dtypes: float64(2), int64(1), object(9)
+    memory usage: 376.0+ KB
+    
 
 
 ```python
@@ -215,6 +396,7 @@ df.describe()
     <tr style="text-align: right;">
       <th></th>
       <th>model_year</th>
+      <th>milage</th>
       <th>price</th>
     </tr>
   </thead>
@@ -222,41 +404,49 @@ df.describe()
     <tr>
       <th>count</th>
       <td>3269.000000</td>
+      <td>3269.000000</td>
       <td>3.269000e+03</td>
     </tr>
     <tr>
       <th>mean</th>
       <td>2014.601407</td>
+      <td>72126.951973</td>
       <td>4.124113e+04</td>
     </tr>
     <tr>
       <th>std</th>
       <td>6.152181</td>
+      <td>53387.413623</td>
       <td>8.304604e+04</td>
     </tr>
     <tr>
       <th>min</th>
       <td>1974.000000</td>
+      <td>100.000000</td>
       <td>2.000000e+03</td>
     </tr>
     <tr>
       <th>25%</th>
       <td>2011.000000</td>
+      <td>30450.000000</td>
       <td>1.550000e+04</td>
     </tr>
     <tr>
       <th>50%</th>
       <td>2016.000000</td>
+      <td>62930.000000</td>
       <td>2.800000e+04</td>
     </tr>
     <tr>
       <th>75%</th>
       <td>2019.000000</td>
+      <td>102750.000000</td>
       <td>4.650000e+04</td>
     </tr>
     <tr>
       <th>max</th>
       <td>2024.000000</td>
+      <td>405000.000000</td>
       <td>2.954083e+06</td>
     </tr>
   </tbody>
@@ -296,7 +486,6 @@ df.describe(include=['object'])
       <th></th>
       <th>brand</th>
       <th>model</th>
-      <th>milage</th>
       <th>fuel_type</th>
       <th>engine</th>
       <th>transmission</th>
@@ -318,13 +507,11 @@ df.describe(include=['object'])
       <td>3269</td>
       <td>3269</td>
       <td>3269</td>
-      <td>3269</td>
     </tr>
     <tr>
       <th>unique</th>
       <td>52</td>
       <td>1614</td>
-      <td>2194</td>
       <td>7</td>
       <td>963</td>
       <td>32</td>
@@ -337,7 +524,6 @@ df.describe(include=['object'])
       <th>top</th>
       <td>Ford</td>
       <td>M3 Base</td>
-      <td>110,000 mi.</td>
       <td>Gasoline</td>
       <td>355.0HP 5.3L 8 Cylinder Engine Gasoline Fuel</td>
       <td>A/T</td>
@@ -350,7 +536,6 @@ df.describe(include=['object'])
       <th>freq</th>
       <td>341</td>
       <td>29</td>
-      <td>16</td>
       <td>2815</td>
       <td>48</td>
       <td>939</td>
@@ -448,7 +633,7 @@ plt.show()
 
 
     
-![png](ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_16_0.png)
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_25_0.png)
     
 
 
@@ -662,7 +847,7 @@ plt.show()
 
 
     
-![png](ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_27_0.png)
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_36_0.png)
     
 
 
@@ -672,7 +857,9 @@ Il y a qu'une tres faible correlation positive entre le prix et l'année de fabr
 ```python
 # Analyse des variables catégorielles
 categorical_columns = ['brand', 'model', 'fuel_type', 'transmission', 'ext_col', 'int_col', 'accident', 'clean_title']
+df_saved=df[['brand', 'model', 'fuel_type', 'transmission', 'ext_col', 'int_col', 'accident', 'clean_title','price','model_year','milage']]
 df=df[['brand', 'model', 'fuel_type', 'transmission', 'ext_col', 'int_col', 'accident', 'clean_title','price','model_year']]
+
 for col in categorical_columns:
     print(f"\nValeurs uniques pour {col}: {df[col].unique()}")
 ```
@@ -813,13 +1000,13 @@ plt.show()
 
 
     
-![png](ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_31_0.png)
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_40_0.png)
     
 
 
 
     
-![png](ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20-%20DONFACK%20PASCAL%20-%20M1-GI_31_1.png)
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_40_1.png)
     
 
 
@@ -1057,6 +1244,209 @@ print(f'MAPE: {mape:.2f}%')
     
 
 ### La regression linaire semble ne pas etre une bonne methode de prediction du prix pour ce dataset
+
+### testons avec les deux colones numeriques milage et price
+#### Regression linaire linaire 
+
+
+```python
+from sklearn.metrics import mean_absolute_error
+df=df_saved
+X = df[['milage']]
+y = df['price']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+lin_reg = LinearRegression()
+lin_reg.fit(X_train_scaled, y_train)
+
+y_pred_lin = lin_reg.predict(X_test_scaled)
+
+# Évaluation
+def eval_metrics(y_true, y_pred):
+    mae = mean_absolute_error(y_true, y_pred)
+    mse = mean_squared_error(y_true, y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_true, y_pred)
+    rel_error = np.mean(np.abs((y_true - y_pred) / y_true)) * 100  # Erreur relative %
+
+    print(f"MAE : {mae:.2f}")
+    print(f"MSE : {mse:.2f}")
+    print(f"RMSE : {rmse:.2f}")
+    print(f"R² : {r2:.2f}")
+    print(f"Erreur relative moyenne : {rel_error:.2f} %")
+
+print("=== Régression Linéaire ===")
+eval_metrics(y_test, y_pred_lin)
+
+```
+
+    === Régression Linéaire ===
+    MAE : 26533.04
+    MSE : 14127233563.18
+    RMSE : 118858.04
+    R² : 0.04
+    Erreur relative moyenne : 104.74 %
+    
+
+### Regression polynomiale
+
+
+```python
+
+```
+
+
+```python
+from sklearn.preprocessing import PolynomialFeatures
+
+degrees = [2, 3, 4]  # Tester plusieurs degrés
+
+for d in degrees:
+    poly = PolynomialFeatures(degree=d)
+    X_train_poly = poly.fit_transform(X_train_scaled)
+    X_test_poly = poly.transform(X_test_scaled)
+
+    poly_reg = LinearRegression()
+    poly_reg.fit(X_train_poly, y_train)
+
+    y_pred_poly = poly_reg.predict(X_test_poly)
+
+    print(f"\n=== Régression Polynomiale (degré {d}) ===")
+    eval_metrics(y_test, y_pred_poly)
+
+# ===== 4. Visualisation =====
+plt.scatter(X, y, color='blue', label='Données réelles')
+plt.plot(X_test, y_pred_lin, color='red', label='Régression Linéaire')
+
+for d in degrees:
+    poly = PolynomialFeatures(degree=d)
+    X_poly = poly.fit_transform(scaler.transform(X))
+    y_poly_pred = LinearRegression().fit(X_poly, y).predict(X_poly)
+    plt.plot(X, y_poly_pred, label=f'Poly deg {d}')
+
+plt.xlabel("Mileage")
+plt.ylabel("Price")
+plt.legend()
+plt.show()
+```
+
+    
+    === Régression Polynomiale (degré 2) ===
+    MAE : 24786.71
+    MSE : 13995156857.94
+    RMSE : 118301.13
+    R² : 0.04
+    Erreur relative moyenne : 80.04 %
+    
+    === Régression Polynomiale (degré 3) ===
+    MAE : 24287.52
+    MSE : 13950298910.98
+    RMSE : 118111.38
+    R² : 0.05
+    Erreur relative moyenne : 77.34 %
+    
+    === Régression Polynomiale (degré 4) ===
+    MAE : 24307.58
+    MSE : 13971645290.25
+    RMSE : 118201.71
+    R² : 0.05
+    Erreur relative moyenne : 77.88 %
+    
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_50_1.png)
+    
+
+
+### Nous observons cependant que la force de la distribution est proche de la fonction exponentielle 
+
+#### tentons une regression avec ce model
+
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+
+
+# Variables X (mileage) et y (price)
+X = df[['milage']]
+y = df['price']
+
+# Transformation logarithmique de y
+y_log = np.log(y)
+
+# Division en train/test
+X_train, X_test, y_train_log, y_test_log = train_test_split(X, y_log, test_size=0.2, random_state=42)
+
+# Standardisation
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# ===== 2. Régression Linéaire sur log(y) =====
+exp_reg = LinearRegression()
+exp_reg.fit(X_train_scaled, y_train_log)
+
+# Prédictions (dans l’espace log)
+y_pred_log = exp_reg.predict(X_test_scaled)
+
+# Transformation inverse (exponentielle) pour revenir à l’échelle normale
+y_pred_exp = np.exp(y_pred_log)
+
+# Évaluation
+def eval_metrics(y_true, y_pred):
+    mae = mean_absolute_error(y_true, y_pred)
+    mse = mean_squared_error(y_true, y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_true, y_pred)
+    rel_error = np.mean(np.abs((y_true - y_pred) / y_true)) * 100  # Erreur relative %
+
+    print(f"MAE : {mae:.2f}")
+    print(f"MSE : {mse:.2f}")
+    print(f"RMSE : {rmse:.2f}")
+    print(f"R² : {r2:.2f}")
+    print(f"Erreur relative moyenne : {rel_error:.2f} %")
+
+print("=== Régression Exponentielle ===")
+eval_metrics(np.exp(y_test_log), y_pred_exp)
+
+# ===== 3. Visualisation =====
+plt.scatter(X, y, color='blue', label='Données réelles')
+plt.plot(X_test, y_pred_exp, color='green', label='Régression Exponentielle')
+
+plt.xlabel("Mileage")
+plt.ylabel("Price")
+plt.legend()
+plt.show()
+
+```
+
+    === Régression Exponentielle ===
+    MAE : 21298.10
+    MSE : 14179198606.41
+    RMSE : 119076.44
+    R² : 0.03
+    Erreur relative moyenne : 56.77 %
+    
+
+
+    
+![png](ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_files/ANALYSE%20EXPLORATOIRE%20%2C%20REGRESSION%20%2C%20CLASSIFICATION%20USED_CARS%20-%20DONFACK%20PASCAL%20-%20M1-GI_52_1.png)
+    
+
+
+### La regression exponentielle semble etre la meilleure methode pour predire le prix en fonction du kilometrage
 
 
 ```python
