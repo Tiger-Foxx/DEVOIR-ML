@@ -1,4 +1,4 @@
-# Projet d'Analyse de Données - Used Cars & Online Retail
+# Devoir d'Analyse de Données - Used Cars & Online Retail
 
 ## Description
 Ce dépôt contient deux analyses de données distinctes réalisées dans le cadre du cours de Machine Learning. Les analyses portent sur :
